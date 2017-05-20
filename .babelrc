@@ -1,0 +1,16 @@
+{
+  "env": {
+    "development": {
+      "sourceMaps": true
+    }
+  },
+  "plugins": ["transform-flow-strip-types"],
+  "presets": [
+    ["env", {
+      "targets": {
+        "node": "6.10"
+      }
+    }],
+    "stage-2"
+  ]
+}
