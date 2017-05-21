@@ -1,7 +1,7 @@
 {
-  "name": "slack-app-setup",
+  "name": "travis-setup",
   "version": "1.0.0",
-  "description": "A helper tool to authenticate and configure the T Brand Dev Tools Slack integration.",
+  "description": "A helper tool to configure Travis.",
   "main": "lib/index.js",
   "files": [
     "lib"
@@ -33,8 +33,12 @@
   "dependencies": {
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
+    "is-ci": "^1.0.10",
     "open": "^0.0.5",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "server-destroy": "^1.0.1",
+    "travis-ci": "^2.1.1",
+    "travis-encrypt": "^2.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
