@@ -11,7 +11,7 @@
     "build": "rollup -c",
     "babel": "babel src --out-dir lib --ignore test.js",
     "precommit": "lint-staged",
-    "prerelease": "build",
+    "prepublish": "build",
     "test": "jest"
   },
   "repository": {
