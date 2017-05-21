@@ -1,13 +1,15 @@
 {
-  "name": "travis-setup",
+  "name": "request-auth-tokens",
   "version": "1.0.0",
-  "description": "A helper tool to configure Travis.",
+  "description": "A tool to help users request authorization tokens on their local machine using a web browser.",
   "main": "lib/index.js",
+  "module": "src/index.js",
   "files": [
     "lib"
   ],
   "scripts": {
-    "build": "babel src --out-dir lib --ignore test.js",
+    "build": "rollup -c",
+    "babel": "babel src --out-dir lib --ignore test.js",
     "precommit": "lint-staged",
     "prerelease": "build",
     "test": "jest"
@@ -22,7 +24,8 @@
     "express",
     "oauth",
     "node",
-    "slack"
+    "slack",
+    "trello"
   ],
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
   "license": "MIT",
@@ -31,35 +34,47 @@
   },
   "homepage": "https://github.com/nytpi/slack-app-auth#readme",
   "dependencies": {
-    "dotenv": "^4.0.0",
+    "caller": "^1.0.1",
     "express": "^4.15.3",
     "is-ci": "^1.0.10",
+    "lodash.merge": "^4.6.0",
     "open": "^0.0.5",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-express-middleware": "^3.0.0",
     "request": "^2.81.0",
     "server-destroy": "^1.0.1",
-    "travis-ci": "^2.1.1",
-    "travis-encrypt": "^2.1.1"
+    "urlencode": "^1.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.5.0",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "core-js": "^2.4.1",
+    "dotenv": "^4.0.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-config-prettier": "^2.1.1",
-    "eslint-plugin-flowtype": "^2.33.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^5.0.1",
     "eslint-plugin-prettier": "^2.1.1",
     "eslint-plugin-react": "^7.0.1",
-    "flow-bin": "^0.46.0",
-    "flow-typed": "^2.1.2",
     "husky": "^0.13.3",
     "jest": "^20.0.3",
     "lint-staged": "^3.4.2",
-    "prettier": "^1.3.1"
+    "prettier": "^1.3.1",
+    "prop-types": "^15.5.10",
+    "regenerator-runtime": "^0.10.5",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-json": "^2.1.1",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-watch": "^3.2.2"
   }
 }

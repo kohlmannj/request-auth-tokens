@@ -1,6 +1,20 @@
-// @flow
-import travisSetup from './index';
+import collectAuthTokens from './collectAuthTokens';
+import SlackService from './services/Slack';
 
-// https://slack.com/oauth/authorize?&client_id=2177882080.186798670246&scope=channels:read,chat:write:bot
+require('dotenv').config(); // eslint-disable-line import/no-extraneous-dependencies
 
-travisSetup();
+collectAuthTokens(
+  [
+    new SlackService({
+      client_id: process.env.SLACK_CLIENT_ID,
+      client_secret: process.env.SLACK_CLIENT_SECRET,
+      reason: 'post staging link updates to Slack channels',
+    }),
+  ],
+  {
+    name: 'scaffolding-next',
+    reason: 'upload multiple encrypted access tokens to Travis CI',
+  },
+).then(([slackToken]) => {
+  console.log('Slack Token:', slackToken);
+});
