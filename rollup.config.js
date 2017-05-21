@@ -8,24 +8,16 @@ module.exports = {
   dest: 'lib/index.js',
   entry: 'src/index.js',
   format: 'cjs',
-  external: [
-    'caller',
-    'lodash.merge',
-    'open',
-    'react',
-    'react-dom',
-    'express',
-    'request',
-    'server-destroy',
-    'urlencode',
-  ],
+  external: Object.keys(pkg.dependencies),
   plugins: [
     json(),
     babel({
       exclude: ['node_modules/**'],
     }),
-    resolve(),
-    // commonjs(),
+    commonjs(),
+    resolve({
+      module: false,
+      jsnext: false,
+    }),
   ],
-  sourceMap: true,
 };

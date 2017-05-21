@@ -1,1 +1,1 @@
-export { default } from './collectAuthTokens';
+export { default } from './requestAuthTokens';

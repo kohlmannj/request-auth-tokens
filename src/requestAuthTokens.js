@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-import 'babel-polyfill'; // eslint-disable-line import/no-extraneous-dependencies
 // import isCI from 'is-ci';
 import express from 'express';
 import request from 'request';

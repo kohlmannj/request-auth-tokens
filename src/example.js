@@ -1,4 +1,4 @@
-import collectAuthTokens from './collectAuthTokens';
+import collectAuthTokens from './requestAuthTokens';
 import SlackService from './services/Slack';
 
 require('dotenv').config(); // eslint-disable-line import/no-extraneous-dependencies
