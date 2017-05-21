@@ -1,6 +1,6 @@
 {
   "name": "request-auth-tokens",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A tool to help users request authorization tokens on their local machine using a web browser.",
   "main": "lib/index.js",
   "module": "src/index.js",
