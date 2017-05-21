@@ -4,9 +4,6 @@
   "description": "A tool to help users request authorization tokens on their local machine using a web browser.",
   "main": "lib/index.js",
   "module": "src/index.js",
-  "files": [
-    "lib"
-  ],
   "engines": {
     "node": ">=6.10",
     "npm": ">=3.10.10"
