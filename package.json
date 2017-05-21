@@ -20,7 +20,7 @@
     "babel": "babel src --out-dir lib --ignore test.js",
     "clean": "rimraf ./lib",
     "precommit": "lint-staged",
-    "prepublish": "npm run clean && npm run build-main-prod && npm run build-services-prod",
+    "prepublish": "in-publish && npm run clean && npm run build-main-prod && npm run build-services-prod || echo",
     "test": "jest"
   },
   "repository": {
@@ -45,6 +45,7 @@
   "dependencies": {
     "caller": "^1.0.1",
     "express": "^4.15.3",
+    "in-publish": "^2.0.0",
     "is-ci": "^1.0.10",
     "lodash.merge": "^4.6.0",
     "open": "^0.0.5",
