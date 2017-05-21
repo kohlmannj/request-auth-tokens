@@ -4,9 +4,13 @@
       "sourceMaps": true
     }
   },
-  "plugins": ["transform-flow-strip-types"],
+  "plugins": [
+    "external-helpers",
+    "transform-class-properties"
+  ],
   "presets": [
     ["env", {
+      "modules": false,
       "targets": {
         "node": "6.10"
       }

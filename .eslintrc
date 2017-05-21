@@ -6,12 +6,10 @@
   },
   "extends": [
     "airbnb",
-    "plugin:flowtype/recommended",
     "prettier"
   ],
   "parser": "babel-eslint",
   "plugins": [
-    "flowtype",
     "prettier"
   ],
   "rules": {
