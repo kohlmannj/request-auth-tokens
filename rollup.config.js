@@ -12,6 +12,28 @@ module.exports = {
   plugins: [
     json(),
     babel({
+      env: {
+        development: {
+          sourceMaps: true,
+        },
+        production: {
+          plugins: ['transform-react-remove-prop-types'],
+        },
+      },
+      plugins: ['external-helpers', 'transform-class-properties'],
+      presets: [
+        [
+          'env',
+          {
+            modules: false,
+            targets: {
+              node: '6.10',
+            },
+          },
+        ],
+        'stage-2',
+      ],
+      babelrc: false,
       exclude: ['node_modules/**'],
     }),
     commonjs(),
