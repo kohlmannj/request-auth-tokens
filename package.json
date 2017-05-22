@@ -1,6 +1,6 @@
 {
   "name": "request-auth-tokens",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "A tool to help users request authorization tokens on their local machine using a web browser.",
   "homepage": "https://github.com/kohlmannj/request-auth-tokens",
   "main": "lib/index.js",
