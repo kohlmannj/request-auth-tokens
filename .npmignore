@@ -1,4 +1,6 @@
 src
+.idea
+.vscode
 .babelrc
 .editorconfig
 .env
