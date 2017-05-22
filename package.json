@@ -1,8 +1,8 @@
 {
   "name": "request-auth-tokens",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A tool to help users request authorization tokens on their local machine using a web browser.",
-  "homepage": "https://github.com/kohlmannj/request-auth-tokens",
+  "homepage": "https://github.com/nytpi/slack-app-auth#readme",
   "main": "lib/index.js",
   "module": "src/index.js",
   "engines": {
@@ -39,7 +39,6 @@
   "bugs": {
     "url": "https://github.com/kohlmannj/request-auth-tokens/issues"
   },
-  "homepage": "https://github.com/nytpi/slack-app-auth#readme",
   "dependencies": {
     "caller": "^1.0.1",
     "express": "^4.15.3",
