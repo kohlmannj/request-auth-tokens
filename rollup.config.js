@@ -31,7 +31,7 @@ module.exports = {
             },
           },
         ],
-        'stage-2',
+        'stage-3',
       ],
       babelrc: false,
       exclude: ['node_modules/**'],

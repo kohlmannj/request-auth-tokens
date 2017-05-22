@@ -2,6 +2,7 @@
 // import isCI from 'is-ci';
 import express from 'express';
 import request from 'request';
+// import portfinder from 'portfinder';
 import callerModule from 'caller';
 import enableDestroy from 'server-destroy';
 import open from 'open';
@@ -35,7 +36,7 @@ export default function(services, options) {
     app: appOption,
     name,
     hostname,
-    port,
+    port: startingPort,
     prompts,
     reason,
     statuses,
@@ -48,6 +49,7 @@ export default function(services, options) {
   let handledServices = [];
   let app = appOption;
   let server;
+  const port = startingPort;
 
   if (typeof reason !== 'string') {
     throw new Error('No reason provided');
@@ -56,6 +58,11 @@ export default function(services, options) {
   // Create our own Express app and start our own server if no `app` was provided as an argument
   if (typeof app !== 'object' || app === 'null') {
     app = express();
+    // portfinder.getPortPromise().then(foundPort => {
+    //   port = foundPort;
+    //   server = app.listen(port);
+    //   enableDestroy(server);
+    // });
     server = app.listen(port);
     enableDestroy(server);
   }
@@ -140,11 +147,11 @@ export default function(services, options) {
     }
   };
 
-  // const destroyServer = () => {
-  //   if (typeof server === 'object' && server !== null) {
-  //     server.destroy();
-  //   }
-  // };
+  const destroyServer = () => {
+    if (typeof server === 'object' && server !== null) {
+      server.destroy();
+    }
+  };
 
   // Init
   handledServices = services.map(add);
@@ -164,6 +171,6 @@ export default function(services, options) {
   open(indexUri);
 
   const tokenPromise = Promise.all(handledServices.map(service => service.promise));
-  // tokenPromise.then(destroyServer).catch(destroyServer);
+  tokenPromise.then(destroyServer).catch(destroyServer);
   return tokenPromise;
 }
