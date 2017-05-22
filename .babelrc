@@ -1,7 +1,8 @@
 {
   "env": {
     "development": {
-      "sourceMaps": true
+      "sourceMaps": true,
+      "retainLines": true
     },
     "production": {
       "plugins": [

@@ -8,11 +8,11 @@
       "type": "node",
       "request": "launch",
       "name": "example",
-      "outFiles": [
-        "${workspaceRoot}/lib/**/*.js"
+      "args": [
+        "-r",
+        "babel-register",
+        "${workspaceRoot}/src/example.js"
       ],
-      "preLaunchTask": "debug",
-      "program": "${workspaceRoot}/lib/example.js",
       "sourceMaps": true,
       "env": {
         "NODE_ENV": "development"
