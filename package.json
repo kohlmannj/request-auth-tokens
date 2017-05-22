@@ -11,16 +11,17 @@
   },
   "scripts": {
     "babel": "babel src --out-dir lib --ignore test.js",
-    "build": "npm run clean && npm run build-main && npm run build-services",
-    "build-main": "rollup -c --sourcemap",
     "build-main-prod": "NODE_ENV=production rollup -c",
-    "build-services": "babel src/services --out-dir lib/services --source-maps --ignore test.js",
+    "build-main": "rollup -c --sourcemap",
     "build-services-prod": "NODE_ENV=production babel src/services --out-dir lib/services --ignore test.js",
+    "build-services": "babel src/services --out-dir lib/services --source-maps --ignore test.js",
+    "build": "npm run clean && npm run build-main && npm run build-services",
     "clean": "rimraf ./lib",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "precommit": "lint-staged",
-    "prepublish": "in-publish && npm run clean && npm run build-main-prod && npm run build-services-prod || echo",
-    "test": "jest",
-    "test-coverage": "jest --coverage && coveralls"
+    "prepublish": "in-publish && npm run clean npm run test-coverage && npm run build-main-prod && npm run build-services-prod || echo",
+    "test-coverage": "jest --coverage && npm run coveralls",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
