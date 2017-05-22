@@ -10,7 +10,6 @@
     }
   },
   "plugins": [
-    "external-helpers",
     "transform-class-properties"
   ],
   "presets": [
