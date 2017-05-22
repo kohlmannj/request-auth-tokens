@@ -2,6 +2,7 @@
   "name": "request-auth-tokens",
   "version": "0.5.0",
   "description": "A tool to help users request authorization tokens on their local machine using a web browser.",
+  "homepage": "https://github.com/kohlmannj/request-auth-tokens",
   "main": "lib/index.js",
   "module": "src/index.js",
   "engines": {
@@ -22,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nytpi/slack-app-auth.git"
+    "url": "https://github.com/kohlmannj/request-auth-tokens.git"
   },
   "keywords": [
     "auth",
@@ -36,7 +37,7 @@
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nytpi/slack-app-auth/issues"
+    "url": "https://github.com/kohlmannj/request-auth-tokens/issues"
   },
   "homepage": "https://github.com/nytpi/slack-app-auth#readme",
   "dependencies": {

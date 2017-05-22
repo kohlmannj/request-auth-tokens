@@ -2,13 +2,13 @@ export default ({
   app,
   name,
   callerPath,
+  pkg,
   prompts,
   reason,
   services,
   statuses,
   title,
   uri,
-  version,
 }) => {
   app.get(uri, (req, res) => {
     let localName = name;
@@ -46,7 +46,7 @@ export default ({
 
     responseHtml +=
       `<table><tr><th>Service</th><th>Status</th><th>Reason</th></tr>${serviceButtons}</table>` +
-      `<small class="meta">Provided by <a href="https://github.com/kohlmannj/oauth-token-collector">oauth-token-collector</a> v${version}` +
+      `<small class="meta">Provided by <a href="${pkg.homepage}">${pkg.name}</a> v${pkg.version}` +
       '</body></html>';
 
     res.send(responseHtml);
