@@ -7,11 +7,13 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "example",
+      "name": "Slack service class",
       "args": [
         "-r",
         "babel-register",
-        "${workspaceRoot}/src/example.js"
+        "${workspaceRoot}/node_modules/jest-cli/bin/jest.js",
+        "--runInBand",
+        "${workspaceRoot}/src/services/__tests__/Slack.test.js"
       ],
       "sourceMaps": true,
       "env": {
